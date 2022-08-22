@@ -1,0 +1,20 @@
+# Copyright (c) 2022 SIGHUP s.r.l All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  name: policy-manager
+spec:
+  port:
+    targetPort: oauth-proxy
+  tls:
+    termination: reencrypt
+  to:
+    kind: Service
+    name: gatekeeper-policy-manager
+    weight: 100
+  wildcardPolicy: None

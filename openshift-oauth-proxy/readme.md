@@ -1,6 +1,6 @@
 Deploy [Gatekeeper Policy Manager](https://github.com/sighupio/gatekeeper-policy-manager) with [openshift-oauth-proxy](https://github.com/openshift/oauth-proxy):
 ```
-session_secret=$(echo -n $RANDOM | md5sum | head -c 24)  oc -n openshift-gatekeeper-system apply -k gatekeeper-policy-manager/
+session_secret=$(echo -n $RANDOM | md5sum | head -c 24) oc -n openshift-gatekeeper-system apply -k gatekeeper-policy-manager/
 ```
 
 **Note**:
